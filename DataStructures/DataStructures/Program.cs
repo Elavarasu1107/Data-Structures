@@ -6,7 +6,7 @@ namespace DataStructures
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Enter 1 for Creating simple LinkedList \n 2 for Adding Value in LinkedList");
+            Console.WriteLine("Enter 1 for Creating simple LinkedList \n 2 for Adding value in LinkedList\n 3 for Appending a value LinkedList");
             Console.WriteLine("Enter a Number:");
             int userInput = Convert.ToInt32(Console.ReadLine());
             LinkedList list = new LinkedList();
@@ -26,6 +26,19 @@ namespace DataStructures
                         list.Add2(30);
                         list.Add2(56);
                         list.Display();
+                        break;
+                    }
+                case 3:
+                    {
+                        list.Append(56);
+                        list.Append(30);
+                        list.Append(70);
+                        list.Display();
+                        break;
+                    }
+                default:
+                    {
+                        Console.WriteLine("Enter the Valid Number");
                         break;
                     }
             }
