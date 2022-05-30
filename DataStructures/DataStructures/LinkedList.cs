@@ -9,23 +9,37 @@ namespace DataStructures
     internal class LinkedList
     {
         public Node head;
-        public void Add(int data)
+        public void Add1(int data)
         {
             Node node = new Node(data);
-            if(this.head == null)
+            if (this.head == null)
             {
                 this.head = node;
             }
             else
             {
                 Node position = head;
-                while(position.next != null)
+                while (position.next != null)
                 {
                     position = position.next;
                 }
                 position.next = node;
             }
-            Console.WriteLine("{0} inserted into LinkedList" , node.data);
+            Console.WriteLine("{0} inserted into LinkedList", node.data);
+        }
+        public void Add2(int data)
+        {
+            Node node = new Node(data);
+            if (this.head == null)
+            {
+                this.head = node;
+            }
+            else
+            {
+               node.next = this.head;
+                head = node;
+            }
+            Console.WriteLine("{0} inserted into LinkedList", node.data);
         }
         public void Display()
         {
