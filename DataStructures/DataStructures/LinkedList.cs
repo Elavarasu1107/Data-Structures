@@ -18,12 +18,12 @@ namespace DataStructures
             }
             else
             {
-                Node position = head;
-                while (position.next != null)
+                Node temp = head;
+                while (temp.next != null)
                 {
-                    position = position.next;
+                    temp = temp.next;
                 }
-                position.next = node;
+                temp.next = node;
             }
             Console.WriteLine("{0} inserted into LinkedList", node.data);
         }
@@ -43,17 +43,18 @@ namespace DataStructures
         }
         public void Display()
         {
-            Node position = this.head;
-            if(position == null)
+            Node temp = this.head;
+            if(temp == null)
             {
                 Console.WriteLine("List is Empty");
                 return;
             }
-            while(position != null)
+            while(temp != null)
             {
-                Console.Write(position.data+" ");
-                position = position.next;
+                Console.Write(temp.data+" ");
+                temp = temp.next;
             }
+            Console.WriteLine();
         }
         public void Append(int data)
         {
@@ -64,14 +65,47 @@ namespace DataStructures
             }
             else
             {
-                Node position = head;
-                while (position.next != null)
+                Node temp = head;
+                while (temp.next != null)
                 {
-                    position = position.next;
+                    temp = temp.next;
                 }
-                position.next = node;
+                temp.next = node;
             }
             Console.WriteLine("{0} inserted into LinkedList", node.data);
+        }
+        public Node Insert(int position, int data)
+        {
+            if(position < 1)
+            {
+                Console.WriteLine("Invalid Position");
+            }
+            if(position == 1)
+            {
+                Node node = new Node(data);
+                node.next = this.head;
+                head = node;
+            }
+            else
+            {
+                while(position != 0)
+                {
+                    position--;
+                    if(position == 1)
+                    {
+                        Node node = new Node(data);
+                        node.next = this.head.next;
+                        head.next = node;
+                        break;
+                    }
+                    head = head.next;
+                }
+                if(position != 1)
+                {
+                    Console.WriteLine("Position is out of Range");
+                }
+            }
+            return head;
         }
     }
 }
