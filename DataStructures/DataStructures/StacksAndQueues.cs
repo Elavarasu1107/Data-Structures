@@ -41,5 +41,25 @@ namespace DataStructures
                 temp = temp.next;
             }
         }
+        public void Peak()
+        {
+            Console.WriteLine();
+            if (this.top == null)
+            {
+                Console.WriteLine("The Stack is Empty");
+                return;
+            }
+            Console.WriteLine("{0} is in top of the Stacks", this.top.data);
+        }
+        public void Pop()
+        {
+            if (this.top == null)
+            {
+                Console.WriteLine("The Stack is Empty");
+                return;
+            }
+            Console.WriteLine("{0} is popped from Stacks", this.top.data);
+            this.top = this.top.next;
+        }
     }
 }
