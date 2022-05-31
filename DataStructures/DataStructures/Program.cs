@@ -7,7 +7,7 @@ namespace DataStructures
         public static void Main(string[] args)
         {
             Console.WriteLine("Enter 1 for Creating simple LinkedList \n 2 for Adding value in LinkedList\n 3 for Appending a value in LinkedList\n 4 for Inserting Value in LinkedList\n" +
-                " 5 for Deleting First Element");
+                " 5 for Deleting First Element\n 6 for Deleting Last Element");
             Console.WriteLine("Enter a Number:");
             int userInput = Convert.ToInt32(Console.ReadLine());
             LinkedList list = new LinkedList();
@@ -31,9 +31,9 @@ namespace DataStructures
                     }
                 case 3:
                     {
-                        list.Append(56);
-                        list.Append(30);
-                        list.Append(70);
+                        list.Add1(56);
+                        list.Add1(30);
+                        list.Add1(70);
                         list.Display();
                         break;
                     }
@@ -53,8 +53,19 @@ namespace DataStructures
                         list.Add1(30);
                         list.Add1(70);
                         list.Display();
-                        list.Delete();
-                        Console.WriteLine("Ater Deleting first element:");
+                        list.DeleteFirst();
+                        Console.WriteLine("Ater Deleting First element:");
+                        list.Display();
+                        break;
+                    }
+                case 6:
+                    {
+                        list.Add1(56);
+                        list.Add1(30);
+                        list.Add1(70);
+                        list.Display();
+                        list.DeleteLast();
+                        Console.WriteLine("Ater Deleting Last element:");
                         list.Display();
                         break;
                     }

@@ -56,24 +56,6 @@ namespace DataStructures
             }
             Console.WriteLine();
         }
-        public void Append(int data)
-        {
-            Node node = new Node(data);
-            if (this.head == null)
-            {
-                this.head = node;
-            }
-            else
-            {
-                Node temp = head;
-                while (temp.next != null)
-                {
-                    temp = temp.next;
-                }
-                temp.next = node;
-            }
-            Console.WriteLine("{0} inserted into LinkedList", node.data);
-        }
         public Node Insert(int position, int data)
         {
             if(position < 1)
@@ -107,14 +89,34 @@ namespace DataStructures
             }
            return head;
         }
-        public void Delete()
+        public Node DeleteFirst()
         {
             if (head == null)
             {
                 Console.WriteLine("Linked List is empty");
-                return;
+                return null;
             }
             head = head.next;
+            return head;
+        }
+        public Node DeleteLast()
+        {
+            Node node = head;
+            if(head == null)
+            {
+                Console.WriteLine("LinkedList is Empty");
+                return null;
+            }
+            if(head.next == null)
+            {
+                this.head = null;
+            }
+            while(node.next.next != null)
+            {
+                node = node.next;
+            }
+            node.next = null;
+            return head;
         }
     }
 }
