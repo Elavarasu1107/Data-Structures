@@ -7,7 +7,7 @@ namespace DataStructures
         public static void Main(string[] args)
         {
             Console.WriteLine("Enter 1 for Creating simple LinkedList \n 2 for Adding value in LinkedList\n 3 for Appending a value in LinkedList\n 4 for Inserting Value in LinkedList\n" +
-                " 5 for Deleting First Element\n 6 for Deleting Last Element\n 7 for creating Stacks\n 8 for Peak and Pop\n 9 for EnQueue");
+                " 5 for Deleting First Element\n 6 for Deleting Last Element\n 7 for creating Stacks\n 8 for Peak and Pop\n 9 for EnQueue\n 10 for DeQueue");
             Console.WriteLine("Enter a Number:");
             int userInput = Convert.ToInt32(Console.ReadLine());
             LinkedList list = new LinkedList();
@@ -95,6 +95,16 @@ namespace DataStructures
                         stacks.EnQueue(56);
                         stacks.EnQueue(30);
                         stacks.EnQueue(70);
+                        stacks.DisplayQueues();
+                        break;
+                    }
+                case 10:
+                    {
+                        stacks.EnQueue(56);
+                        stacks.EnQueue(30);
+                        stacks.EnQueue(70);
+                        stacks.DisplayQueues();
+                        stacks.DeQueue();
                         stacks.DisplayQueues();
                         break;
                     }

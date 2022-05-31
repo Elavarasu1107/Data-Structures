@@ -100,5 +100,18 @@ namespace DataStructures
                 temp = temp.next;
             }
         }
+        public void DeQueue()
+        {
+            Console.WriteLine();
+            if (this.head == null)
+            {
+                Console.WriteLine("Queue is Empty");
+            }
+            while (this.head != null)
+            {
+                Console.WriteLine("{0} is removed from Queue", head.data);
+                head = head.next;
+            }
+        }
     }
 }
