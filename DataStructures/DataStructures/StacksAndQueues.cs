@@ -69,5 +69,36 @@ namespace DataStructures
                 Pop();
             }
         }
+        public void EnQueue(int data)
+        {
+            Node node = new Node(data);
+            if (this.head == null)
+            {
+                this.head = node;
+            }
+            else
+            {
+                Node temp = head;
+                while (temp.next != null)
+                {
+                    temp = temp.next;
+                }
+                temp.next = node;
+            }
+            Console.WriteLine("{0} inserted into Queue", node.data);
+        }
+        public void DisplayQueues()
+        {
+            Node temp = this.head;
+            if (temp == null)
+            {
+                Console.WriteLine("Queue is Empty");
+            }
+            while (temp != null)
+            {
+                Console.Write(temp.data + " ");
+                temp = temp.next;
+            }
+        }
     }
 }
