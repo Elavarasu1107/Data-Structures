@@ -105,7 +105,16 @@ namespace DataStructures
                     Console.WriteLine("Position is out of Range");
                 }
             }
-            return head;
+           return head;
+        }
+        public void Delete()
+        {
+            if (head == null)
+            {
+                Console.WriteLine("Linked List is empty");
+                return;
+            }
+            head = head.next;
         }
     }
 }
