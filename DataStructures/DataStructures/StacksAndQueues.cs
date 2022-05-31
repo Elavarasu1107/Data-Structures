@@ -61,5 +61,13 @@ namespace DataStructures
             Console.WriteLine("{0} is popped from Stacks", this.top.data);
             this.top = this.top.next;
         }
+        public void IsEmpty()
+        {
+            while (this.top != null)
+            {
+                Peak();
+                Pop();
+            }
+        }
     }
 }

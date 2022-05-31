@@ -86,6 +86,7 @@ namespace DataStructures
                         stacks.DisplayStacks();
                         stacks.Peak();
                         stacks.Pop();
+                        stacks.IsEmpty();
                         stacks.DisplayStacks();
                         break;
                     }
