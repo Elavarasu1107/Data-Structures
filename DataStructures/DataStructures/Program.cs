@@ -7,10 +7,11 @@ namespace DataStructures
         public static void Main(string[] args)
         {
             Console.WriteLine("Enter 1 for Creating simple LinkedList \n 2 for Adding value in LinkedList\n 3 for Appending a value in LinkedList\n 4 for Inserting Value in LinkedList\n" +
-                " 5 for Deleting First Element\n 6 for Deleting Last Element");
+                " 5 for Deleting First Element\n 6 for Deleting Last Element\n 7 for creating Stacks");
             Console.WriteLine("Enter a Number:");
             int userInput = Convert.ToInt32(Console.ReadLine());
             LinkedList list = new LinkedList();
+            StacksAndQueues stacks = new StacksAndQueues();
             switch (userInput)
             {
                 case 1:
@@ -67,6 +68,14 @@ namespace DataStructures
                         list.DeleteLast();
                         Console.WriteLine("Ater Deleting Last element:");
                         list.Display();
+                        break;
+                    }
+                case 7:
+                    {
+                        stacks.Push(70);
+                        stacks.Push(30);
+                        stacks.Push(56);
+                        stacks.DisplayStacks();
                         break;
                     }
                 default:
